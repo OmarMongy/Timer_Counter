@@ -29,8 +29,5 @@ The module behaves as follows:
 4. The `done` signal is assigned to be high when the counter's current value (`Q_reg`) matches the `final_value`, indicating that the counting operation has completed.
 5. The `Q_next` value is calculated based on the `done` signal; if `done` is high, `Q_next` is set to zero (`'b0`), otherwise, `Q_next` is incremented by one from the current count value (`Q_reg + 1`).
 
-## Usage:
-
-To use this timer counter module, instantiate it in your top-level design and provide the necessary connections to its input and output ports. Configure the `N` parameter according to the desired bit width of the counter. The `timer_counter_inp` module will then count from 0 to the specified `final_value` when the `enable` signal is asserted and the provided clock is running. The `done` output signal will indicate when the counting operation is complete.
 
 Note: The module assumes that the `enable` and `reset_n` inputs are glitch-free and synchronous to the positive clock edge. It is essential to ensure proper synchronization and glitch-free operation in the external circuitry driving these signals.
